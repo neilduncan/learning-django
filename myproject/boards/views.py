@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http.response import Http404
-from django.core.exceptions import ObjectDoesNotExist
 from .models import Board
 
 def home(request):
@@ -10,6 +9,6 @@ def home(request):
 def board_topics(request, pk):
     try:
         board = Board.objects.get(pk=pk)
-    except ObjectDoesNotExist:
+    except Board.DoesNotExist:
         raise Http404
     return render(request, 'topics.html', {'board': board})

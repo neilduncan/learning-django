@@ -8,6 +8,7 @@
 		"files.exclude": {
 			"env": true,
 			"**/__pycache__": true
-		}
+		},
+		"python.pythonPath": "${workspaceFolder}\\env\\Scripts\\python.exe"
 	}
 }

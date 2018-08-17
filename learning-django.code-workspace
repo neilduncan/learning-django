@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.exclude": {
-			"env": true
+			"env": true,
+			"**/__pycache__": true
 		}
 	}
 }

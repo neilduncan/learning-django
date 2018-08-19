@@ -2,9 +2,9 @@ from django.urls import reverse
 from django.urls import resolve
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import Board, Topic, Post
-from .views import home, board_topics, new_topic
-from .forms import NewTopicForm
+from ..models import Board, Topic, Post
+from ..views import home, board_topics, new_topic
+from ..forms import NewTopicForm
 
 class HomeTests(TestCase):
     def setUp(self):
@@ -105,7 +105,7 @@ class NewTopicTests(TestCase):
         '''
         url = reverse('new_topic', kwargs={'pk': 1})
         response = self.client.post(url, {})
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
     def test_new_topic_invalid_post_data_empty_fields(self):
         '''
